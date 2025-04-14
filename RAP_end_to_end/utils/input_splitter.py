@@ -10,10 +10,13 @@ class table_mapping_processor:
     def __init__(self, nDev, preprocessing_plan):
         self.table_mapping = [1,1,3,2, 2,2,3,1, 1,3,1,3, 0,0,1,3, 1,2,3,0, 0,2,2,0, 0,2,0]
         if preprocessing_plan == 0 or preprocessing_plan == 1:
-            if nDev == 2:
+            if nDev == 1:
+                # For single GPU, all tables go to GPU 0
+                self.table_mapping = [0] * 26  # 26 is the number of categorical features
+            elif nDev == 2:
                 self.table_mapping = [0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
             elif nDev == 4:
-                self.table_mapping = [1,1,3,2, 2,2,3,1, 1,3,1,3, 0,0,1,3, 1,2,3,0, 0,2,2,0, 0,2,0] # preprocessing_plan_0
+                self.table_mapping = [1,1,3,2, 2,2,3,1, 1,3,1,3, 0,0,1,3, 1,2,3,0, 0,2,2,0, 0,2,0]
             elif nDev == 8:
                 self.table_mapping = [1, 1, 3, 6, 2, 2, 7, 1, 5, 3, 5, 7, 0, 0, 5, 3, 1, 2, 7, 0, 4, 2, 6, 4, 4, 6, 0]
         elif preprocessing_plan == 2:
