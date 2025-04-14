@@ -24,6 +24,8 @@ docker pull zhengwang0122/zheng_torchrec_cudf:latest
 # <dir_of_RAP> is the root directory of RAP
 docker run --gpus all --name=RAP_exp -it -v /home/yuke_wang/zheng_wang/RAP-artifacts-local:/workspace/RAP --ipc=host --cap-add=SYS_ADMIN zhengwang0122/zheng_torchrec_cudf:latest /bin/bash
 
+docker run --gpus all --name=RAP_exp -it -v /home/yuzhuyu/RAP-artifacts:/workspace/RAP --ipc=host --cap-add=SYS_ADMIN zhengwang0122/zheng_torchrec_cudf:latest /bin/bash
+
 apt-get update
 apt-get install graphviz
 apt-get install git 
