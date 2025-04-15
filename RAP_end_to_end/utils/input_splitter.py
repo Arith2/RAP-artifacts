@@ -11,8 +11,8 @@ class table_mapping_processor:
         self.table_mapping = [1,1,3,2, 2,2,3,1, 1,3,1,3, 0,0,1,3, 1,2,3,0, 0,2,2,0, 0,2,0]
         if preprocessing_plan == 0 or preprocessing_plan == 1:
             if nDev == 1:
-                # For single GPU, all tables go to GPU 0
-                self.table_mapping = [0] * 26  # 26 is the number of categorical features
+                # For single GPU, all sparse tables go to GPU 0
+                self.table_mapping = [0] * 27  # 26+1 sparse features only
             elif nDev == 2:
                 self.table_mapping = [0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
             elif nDev == 4:
