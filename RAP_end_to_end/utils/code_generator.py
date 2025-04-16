@@ -298,7 +298,36 @@ class code_generator:
         TEMPLATE_FILE = "template/GPU_{}_template_all.jinja".format(self.nDev)
         template = templateEnv.get_template(TEMPLATE_FILE)
 
-        if self.nDev == 2:
+        if self.nDev == 1:
+            templateVars = {
+                # ========= first iter =========
+                "gpu_0_first_iter": self.first_iter_code[0],
+
+                # ========= input&output encode decode =========
+                "gpu_0_input_list_encode": self.input_encode_code[0],
+                "gpu_0_input_list_decode": self.input_decode_code[0],
+
+                "gpu_0_output_list_encode": self.output_encode_code[0],
+                "gpu_0_output_list_decode": self.output_decode_code[0],
+
+                # ========= thread function =========
+                "gpu_0_input_cpu_code": self.input_cpu_code[0],
+
+                # ========= gpu code =========
+                "gpu_0_gpu_code": self.gpu_code[0],
+
+                # ========= output tensor =========
+                "gpu_0_dense_output_tensor": self.dense_output_tensor_code[0],
+                "gpu_0_sparse_output_tensor": self.sparse_output_tensor_code[0],
+
+                # ========= msg code =========
+                "put_code_0": self.msg_code[0],
+                "put_code_1": self.msg_code[1],
+                "put_code_2": self.msg_code[2],
+                "put_code_3": self.msg_code[3],
+                "put_code_4": self.msg_code[4],
+            }
+        elif self.nDev == 2:
             templateVars = {
                 # ========= first iter =========
                 "gpu_0_first_iter": self.first_iter_code[0],
