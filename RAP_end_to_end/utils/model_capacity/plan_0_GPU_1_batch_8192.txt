@@ -1,6 +1,6 @@
 GPU_0   
-emb_fwd: 23
-mlp_fwd: 33
-mlp_bwd: 47
-emb_bwd: 17
-grad_comm: 0.0 
+emb_fwd: 24 
+mlp_fwd: 34 
+mlp_bwd: 48 
+emb_bwd: 18 
+grad_comm: 80 
