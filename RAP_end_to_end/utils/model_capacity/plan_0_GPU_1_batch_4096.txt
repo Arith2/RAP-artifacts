@@ -1,0 +1,6 @@
+GPU_0   
+emb_fwd: 25
+mlp_fwd: 29
+mlp_bwd: 51
+emb_bwd: 19
+grad_comm: 0.0 
