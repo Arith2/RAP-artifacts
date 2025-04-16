@@ -34,7 +34,7 @@ class capacity_estimator:
         self.base_latency_dict = {}
         if preprocessing_plan == 0:
             if nDev == 1:
-                self.base_latency_dict = {"emb_fwd": 0.85, "mlp_fwd": 1.90, "mlp_bwd": 2.85, "emb_bwd": 0.80, "grad_comm": 0.0}
+                self.base_latency_dict = {"emb_fwd": 0.90, "mlp_fwd": 1.96, "mlp_bwd": 2.88, "emb_bwd": 0.85, "grad_comm": 1.61}
             elif nDev == 2:
                 self.base_latency_dict = {"emb_fwd": 0.90, "mlp_fwd": 1.96, "mlp_bwd": 2.88, "emb_bwd": 0.85, "grad_comm": 1.61}
             elif nDev == 4:
